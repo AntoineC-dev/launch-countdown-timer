@@ -1,1 +1,220 @@
 @import "./config.css";
+
+body {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-400);
+  background-image: linear-gradient(
+      hsla(235, 16%, 14%, 0.1) 0%,
+      hsla(345, 95%, 68%, 0.03) 30%,
+      hsla(345, 95%, 68%, 0.075) 100%
+    ),
+    url(./bg-stars.svg);
+  background-repeat: no-repeat, repeat;
+  background-position: top, center;
+  background-size: auto, auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/** MAIN **/
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block: auto;
+  gap: 6.5rem;
+}
+
+.title {
+  font-size: 2.125rem;
+  text-align: center;
+  letter-spacing: 0.125em;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+/** COUNTDOWN **/
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 5.25rem;
+  color: var(--clr-primary-red);
+}
+
+.countdown-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.flipcard-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: var(--clr-primary-blue);
+}
+
+.flipcard {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: -0.3rem;
+  overflow-x: clip;
+}
+
+.flipcard::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--clr-neutral-400);
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: -0.5rem;
+  border-radius: 0.1em;
+  z-index: -50;
+}
+
+.top-half::before,
+.top-half::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--clr-neutral-400);
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  z-index: 50;
+}
+
+.top-half::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.top-half::after {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.top-half,
+.bottom-half,
+.flipcard .flip-top,
+.flipcard .flip-bottom {
+  height: 0.875em;
+  display: flex;
+  justify-content: center;
+  line-height: 1.125;
+  padding-block: 0.3125em;
+  width: 1.75em;
+  overflow: hidden;
+}
+
+.top-half,
+.flipcard .flip-top {
+  background-color: hsl(236, 21%, 22%);
+  border-top-right-radius: 0.1em;
+  border-top-left-radius: 0.1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bottom-half,
+.flipcard .flip-bottom {
+  background-color: hsl(236, 21%, 26%);
+  display: flex;
+  align-items: flex-end;
+  border-bottom-right-radius: 0.1em;
+  border-bottom-left-radius: 0.1em;
+}
+
+.flipcard .flip-top {
+  position: absolute;
+  width: 100%;
+  animation: flip-top 250ms ease-in;
+  transform-origin: bottom center;
+}
+
+@keyframes flip-top {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+.flipcard .flip-bottom {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  animation: flip-bottom 250ms ease-out 250ms;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+}
+
+@keyframes flip-bottom {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/** FOOTER **/
+
+footer {
+  margin-top: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  color: var(--clr-primary-blue);
+}
+
+.hills {
+  position: absolute;
+  z-index: -50;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 197px;
+  object-fit: cover;
+  object-position: right;
+}
+
+@media (min-width: 1440px) {
+  .hills {
+    height: auto;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-link {
+  padding: 0.5rem;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+  color: var(--clr-primary-red);
+}
+
+.attributions {
+  font-size: 0.75rem;
+}
+
+.attributions > a {
+  text-decoration: underline;
+}
