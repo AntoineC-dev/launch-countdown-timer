@@ -1,0 +1,57 @@
+:root {
+  --clr-primary-blue: hsl(237, 18%, 59%);
+  --clr-primary-red: hsl(345, 95%, 68%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(236, 21%, 26%);
+  --clr-neutral-300: hsl(235, 16%, 14%);
+  --clr-neutral-400: hsl(234, 17%, 12%);
+
+  --media-xs: 480px;
+  --media-sm: 640px;
+  --media-md: 768px;
+  --media-lg: 1024px;
+  --media-xl: 1280px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-size: 14px;
+  line-height: 1;
+  font-family: "Red Hat Text", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  overflow-wrap: break-word;
+}
