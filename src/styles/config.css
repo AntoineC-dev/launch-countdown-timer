@@ -22,6 +22,7 @@
 
 html,
 body {
+  margin: 0;
   height: 100%;
 }
 body {
@@ -45,6 +46,8 @@ textarea,
 select {
   font: inherit;
 }
+
+a,
 p,
 h1,
 h2,
@@ -54,4 +57,8 @@ h5,
 h6 {
   line-height: 1;
   overflow-wrap: break-word;
+  color: inherit;
+}
+a {
+  text-decoration: none;
 }
