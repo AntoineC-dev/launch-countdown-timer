@@ -25,7 +25,8 @@ main {
   align-items: center;
   margin-block: auto;
   padding-inline: 2rem;
-  gap: 6.5rem;
+  padding-block: 6rem;
+  gap: min(14vmin, 6.25rem);
 }
 
 .title {
